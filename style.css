@@ -41,7 +41,7 @@ h3 {
   color: white;
 }
 
-#cajapadre {
+/*#cajapadre {
   display: flex;
   width: 1350px;
   height: 250px;
@@ -57,26 +57,38 @@ h3 {
   margin: 5px;
   background-color: #ccc;
   border: solid 1px;
+}*/
+
+#cajapadre {
+  display: flex;
+  width: 100%; /* Cambiar el ancho fijo a 100% */
+  height: auto; /* Ajustar la altura automáticamente según el contenido */
+  border: 2px solid;
+  justify-content: center;
+  align-items: flex-start; /* Para que los elementos se alineen al inicio y el texto fluya hacia abajo */
+  flex-wrap: wrap;
+  padding: 10px; /* Añadir un poco de espacio alrededor del contenido */
+  box-sizing: border-box; /* Incluir el padding y el border en el ancho total */
 }
 
-#caja-1 {
-  flex: 1;
-}
-
-#caja-2 {
-  flex: 1;
-}
-
-#caja-3 {
-  flex: 1;
-}
-
-#caja-4 {
-  flex: 1;
+#cajapadre > div {
+  width: calc(50% - 10px); /* Ocupar la mitad del ancho menos un poco de margen */
+  height: auto; /* Ajustar la altura automáticamente */
+  margin: 5px;
+  background-color: #ccc;
+  border: solid 1px;
+  box-sizing: border-box; /* Incluir el padding y el border en el ancho total */
 }
 
 footer {
   text-align: center;
   background-color: black;
   color: white;
+}
+
+/* Para pantallas más pequeñas, hacer que cada caja ocupe el 100% del ancho */
+@media (max-width: 768px) {
+  #cajapadre > div {
+    width: 100%;
+  }
 }
